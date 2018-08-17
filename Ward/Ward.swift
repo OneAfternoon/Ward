@@ -6,8 +6,6 @@
 //  Copyright © 2018 Swain Molster. All rights reserved.
 //
 
-import Foundation
-
 // MARK: Simple functions
 
 public func ward<Object: AnyObject, A, B>(_ obj: Object, withDefault defaultValue: B, function: @escaping (Object, A) -> B) -> (A) -> B {
