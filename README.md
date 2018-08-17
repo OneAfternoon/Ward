@@ -6,6 +6,8 @@
 
 ### Before
 ```swift
+func useAClosureBasedAPI(block: @escaping (Something) -> Void) { ... }
+
 class MyViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -34,7 +36,7 @@ class MyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        useAClosureBasedAPI(block: ward(self) { strongSelf in
+        useAClosureBasedAPI(block: ward(self) { strongSelf, something in
             strongSelf.handle(something)
         })
     }
