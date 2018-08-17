@@ -71,3 +71,7 @@ let function: (String) -> Int = ward(self) { strongSelf, string in
 ```
 github 'smolster/Ward'
 ```
+
+## Authors
+- Mack Hasz ([@lazyvar](https://github.com/lazyvar))
+- Swain Molster ([@smolster](https://github.com/smolster))
