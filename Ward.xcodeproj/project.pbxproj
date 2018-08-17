@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A018AC262127094E00259F42 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A018AC252127094E00259F42 /* README.md */; };
 		A0BC75FB212672D500A47FD7 /* Ward.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BC75F1212672D500A47FD7 /* Ward.framework */; };
 		A0BC7600212672D500A47FD7 /* WardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BC75FF212672D500A47FD7 /* WardTests.swift */; };
 		A0BC760C212672E800A47FD7 /* Ward.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BC760B212672E800A47FD7 /* Ward.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A018AC252127094E00259F42 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A0BC75F1212672D500A47FD7 /* Ward.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ward.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0BC75F5212672D500A47FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0BC75FA212672D500A47FD7 /* WardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +57,7 @@
 		A0BC75E7212672D500A47FD7 = {
 			isa = PBXGroup;
 			children = (
+				A018AC252127094E00259F42 /* README.md */,
 				A0BC75F3212672D500A47FD7 /* Ward */,
 				A0BC75FE212672D500A47FD7 /* WardTests */,
 				A0BC75F2212672D500A47FD7 /* Products */,
@@ -180,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A018AC262127094E00259F42 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,7 +363,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.smolster.Ward;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smack.Ward;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -386,7 +390,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.smolster.Ward;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smack.Ward;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -406,7 +410,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.smolster.WardTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smack.WardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -425,7 +429,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.smolster.WardTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smack.WardTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

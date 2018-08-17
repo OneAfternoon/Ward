@@ -2,8 +2,8 @@
 //  Ward.swift
 //  Ward
 //
-//  Created by Swain Molster on 8/16/18.
-//  Copyright © 2018 Swain Molster. All rights reserved.
+//  Created by Mack Hasz and Swain Molster on 8/16/18.
+//  Copyright © 2018 Mack Hasz and Swain Molster. All rights reserved.
 //
 
 // MARK: Function literal variants
