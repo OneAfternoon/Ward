@@ -1,0 +1,3 @@
+# Ward
+
+[![Travis CI](https://img.shields.io/travis/smolster/Ward/master.svg?style=flat-square)](https://travis-ci.org/smolster/Ward) [![code cov](https://img.shields.io/codecov/c/github/smolster/Ward.svg?style=flat-square)](https://codecov.io/gh/smolster/Ward) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat-square)](https://github.com/Carthage/Carthage) ![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat-square) ![platforms](https://img.shields.io/badge/platform-iOS-lightgrey.svg?style=flat-square) [![license](	https://img.shields.io/github/license/smolster/Ward.svg?style=flat-square)](https://github.com/smolster/Ward/blob/master/LICENSE)
