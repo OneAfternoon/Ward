@@ -9,48 +9,6 @@
 import XCTest
 @testable import Ward
 
-private class SampleClass { }
-
-private class SampleKeyPathClass {
-    
-    private var voidToVoidAction: (() -> Void)?
-    private var stringToVoidAction: ((String) -> Void)?
-    private var voidToBoolAction: (() -> Bool)?
-    private var stringToIntAction: ((String) -> Int)?
-    
-    init(voidToVoid: @escaping () -> Void) {
-        self.voidToVoidAction = voidToVoid
-    }
-    
-    init(stringToVoid: @escaping (String) -> Void) {
-        self.stringToVoidAction = stringToVoid
-    }
-    
-    init(voidToBool: @escaping () -> Bool) {
-        self.voidToBoolAction = voidToBool
-    }
-    
-    init(stringToInt: @escaping (String) -> Int) {
-        self.stringToIntAction = stringToInt
-    }
-    
-    var voidToVoid: () -> Void {
-        return voidToVoidAction!
-    }
-    
-    var stringToVoid: (String) -> Void {
-        return stringToVoidAction!
-    }
-    
-    var voidToBool: () -> Bool {
-        return voidToBoolAction!
-    }
-    
-    var stringToInt: (String) -> Int {
-        return stringToIntAction!
-    }
-}
-
 class WardTests: XCTestCase {
     
     func testGenericInAndOut() {

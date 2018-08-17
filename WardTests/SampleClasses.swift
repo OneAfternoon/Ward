@@ -6,55 +6,44 @@
 //  Copyright © 2018 Swain Molster. All rights reserved.
 //
 
-import Foundation
-import UIKit
+class SampleClass { }
 
-@testable import Ward
-
-protocol ViewModelOutputs: class {
-    var showAlertString: ((String) -> Void)? { get set }
+class SampleKeyPathClass {
     
-    var displayListOfStrings: (([String]) -> Void)? { get set }
-}
-
-protocol ViewModelType {
-    var outputs: ViewModelOutputs { get }
-}
-
-class ViewModel: ViewModelOutputs, ViewModelType {
+    private var voidToVoidAction: (() -> Void)?
+    private var stringToVoidAction: ((String) -> Void)?
+    private var voidToBoolAction: (() -> Bool)?
+    private var stringToIntAction: ((String) -> Int)?
     
-    init() { }
-    
-    var showAlertString: ((String) -> Void)?
-    
-    var displayListOfStrings: (([String]) -> Void)?
-    
-    var outputs: ViewModelOutputs { return self }
-}
-
-class SampleViewController: UIViewController {
-    
-    let viewModel: ViewModelType = ViewModel()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        viewModel.outputs.displayListOfStrings = ward(self) { strongSelf, strings in
-            // strongSelf is of type SampleViewController
-        }
-        
-        // \.showAlert is of type KeyPath<SampleViewController, (String) -> Void>
-        viewModel.outputs.showAlertString = ward(self, \.showAlert)
+    init(voidToVoid: @escaping () -> Void) {
+        self.voidToVoidAction = voidToVoid
     }
-}
-
-extension UIViewController {
     
-    // Code does not compile when this is declared as a function :(
+    init(stringToVoid: @escaping (String) -> Void) {
+        self.stringToVoidAction = stringToVoid
+    }
     
-    var showAlert: (String) -> Void {
-        return { string in
-            self.title = string
-        }
+    init(voidToBool: @escaping () -> Bool) {
+        self.voidToBoolAction = voidToBool
+    }
+    
+    init(stringToInt: @escaping (String) -> Int) {
+        self.stringToIntAction = stringToInt
+    }
+    
+    var voidToVoid: () -> Void {
+        return voidToVoidAction!
+    }
+    
+    var stringToVoid: (String) -> Void {
+        return stringToVoidAction!
+    }
+    
+    var voidToBool: () -> Bool {
+        return voidToBoolAction!
+    }
+    
+    var stringToInt: (String) -> Int {
+        return stringToIntAction!
     }
 }
