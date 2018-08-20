@@ -8,39 +8,27 @@
 ```swift
 func useAClosureBasedAPI(block: @escaping (Something) -> Void) { ... }
 
-class MyViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        useAClosureBasedAPI(block: { [weak self] something in
-            guard let strongSelf = self else {
-                return
-            }
-            
-            strongSelf.handle(something)
-        })
+useAClosureBasedAPI(block: { [weak self] something in
+    guard let strongSelf = self else {
+        return
     }
     
-    func handle(_ something: Any) { 
-        ...
-    }
-}
+    strongSelf.handle(something)
+})
 ```
 
 ### After
 
 ```swift
-class MyViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        useAClosureBasedAPI(block: ward(self) { strongSelf, something in
-            strongSelf.handle(something)
-        })
-    }
-}
+useAClosureBasedAPI(block: ward(self) { strongSelf, something in
+    strongSelf.handle(something)
+})
+```
+For callbacks that return, provide a default value if the object can't be unwrapped. 
+```swift
+present(vc, shouldExit: ward(self, else: true) { strongSelf
+    return strongSelf.shouldExit
+})
 ```
 
 Or, you can change your function declaration to a computed `var`, and use the `KeyPath` based API:
@@ -72,7 +60,7 @@ let function: (String) -> Int = ward(self) { strongSelf, string in
 
 ## Try it out on Carthage!
 ```
-github 'smolster/Ward'
+github 'OneAfternoon/Ward'
 ```
 
 ## Authors
