@@ -31,7 +31,7 @@ present(vc, shouldExit: ward(self, else: true) { strongSelf
 })
 ```
 
-Or, you can change your function declaration to a computed `var`, and use the `KeyPath` based API:
+Use the `KeyPath` based API to call blocks that are properties of ```self```
 
 ```swift
 class MyViewController: UIViewController {
@@ -40,12 +40,17 @@ class MyViewController: UIViewController {
         super.viewDidLoad()
         
         useAClosureBasedAPI(block: ward(self, \.handleSomething))
+        useAClosureBasedAPI(block: ward(self, \.handleAnotherThing))
     }
     
-    var handleSomething: (_ something: Any) -> Void { 
-        return { any in 
-            ...
-        }
+    // Can't access functions with KeyPath so blocks are required
+    let handleSomething: (_ something: Any) -> Void = { something in 
+        ...
+    }
+    
+    // lazy because accessing self
+    lazy var handleSomething: (_ something: Any) -> Void = { something in 
+         self.doThing(with: something)
     }
 }
 ```
@@ -53,7 +58,7 @@ class MyViewController: UIViewController {
 Plays well with generic inputs & outputs, too!
 
 ```swift
-let function: (String) -> Int = ward(self) { strongSelf, string in
+lazy var function: (String) -> Int = ward(self) { strongSelf, string in
     return strongSelf.stringToInt(string)
 }
 ```
