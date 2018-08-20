@@ -14,7 +14,7 @@ class WardTests: XCTestCase {
     func testGenericInAndOut() {
         var sample: SampleClass? = SampleClass()
         
-        let function: (String) -> Int = ward(sample.unsafelyUnwrapped, withDefault: -1) { _, string in
+        let function: (String) -> Int = ward(sample.unsafelyUnwrapped, else: -1) { _, string in
             return string.count
         }
         
@@ -55,7 +55,7 @@ class WardTests: XCTestCase {
     func testJustGenericOut() {
         var sample: SampleClass? = SampleClass()
         
-        let function: () -> Bool = ward(sample.unsafelyUnwrapped, withDefault: false) { _ in
+        let function: () -> Bool = ward(sample.unsafelyUnwrapped, else: false) { _ in
             return true
         }
         
@@ -97,7 +97,7 @@ class WardTests: XCTestCase {
             return string.count
         })
         
-        let function: (String) -> Int = ward(sample.unsafelyUnwrapped, withDefault: -1, \.stringToInt)
+        let function: (String) -> Int = ward(sample.unsafelyUnwrapped, else: -1, \.stringToInt)
         
         XCTAssert(function("Test") == 4)
         XCTAssert(function("TestTwo") == 7)
@@ -138,7 +138,7 @@ class WardTests: XCTestCase {
             return true
         })
         
-        let function: () -> Bool = ward(sample.unsafelyUnwrapped, withDefault: false, \.voidToBool)
+        let function: () -> Bool = ward(sample.unsafelyUnwrapped, else: false, \.voidToBool)
         
         XCTAssert(function() == true)
         

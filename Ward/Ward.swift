@@ -55,7 +55,7 @@ public func ward<Object: AnyObject, A, B, C>(_ object: Object, function: @escapi
 /**
  Wards a `function` based on the lifetime of an `object`, returing a `defaultValue` if `object` has deallocated. `object` will not be retained, and `function` will only be called if `object` is non-nil at call-time.
  */
-public func ward<Object: AnyObject, Z>(_ object: Object, withDefault defaultValue: Z, function: @escaping (Object) -> Z) -> () -> Z {
+public func ward<Object: AnyObject, Z>(_ object: Object, else defaultValue: Z, function: @escaping (Object) -> Z) -> () -> Z {
     return { [weak object] in
         guard let obj = object else { return defaultValue }
         return function(obj)
@@ -65,7 +65,7 @@ public func ward<Object: AnyObject, Z>(_ object: Object, withDefault defaultValu
 /**
  Wards a `function` based on the lifetime of an `object`, returing a `defaultValue` if `object` has deallocated. `object` will not be retained, and `function` will only be called if `object` is non-nil at call-time.
  */
-public func ward<Object: AnyObject, A, Z>(_ object: Object, withDefault defaultValue: Z, function: @escaping (Object, A) -> Z) -> (A) -> Z {
+public func ward<Object: AnyObject, A, Z>(_ object: Object, else defaultValue: Z, function: @escaping (Object, A) -> Z) -> (A) -> Z {
     return { [weak object] a in
         guard let obj = object else { return defaultValue }
         return function(obj, a)
@@ -75,7 +75,7 @@ public func ward<Object: AnyObject, A, Z>(_ object: Object, withDefault defaultV
 /**
  Wards a `function` based on the lifetime of an `object`, returing a `defaultValue` if `object` has deallocated. `object` will not be retained, and `function` will only be called if `object` is non-nil at call-time.
  */
-public func ward<Object: AnyObject, A, B, Z>(_ object: Object, withDefault defaultValue: Z, function: @escaping (Object, A, B) -> Z) -> (A, B) -> Z {
+public func ward<Object: AnyObject, A, B, Z>(_ object: Object, else defaultValue: Z, function: @escaping (Object, A, B) -> Z) -> (A, B) -> Z {
     return { [weak object] a, b in
         guard let obj = object else { return defaultValue }
         return function(obj, a, b)
@@ -85,7 +85,7 @@ public func ward<Object: AnyObject, A, B, Z>(_ object: Object, withDefault defau
 /**
  Wards a `function` based on the lifetime of an `object`, returing a `defaultValue` if `object` has deallocated. `object` will not be retained, and `function` will only be called if `object` is non-nil at call-time.
  */
-public func ward<Object: AnyObject, A, B, C, Z>(_ object: Object, withDefault defaultValue: Z, function: @escaping (Object, A, B, C) -> Z) -> (A, B, C) -> Z {
+public func ward<Object: AnyObject, A, B, C, Z>(_ object: Object, else defaultValue: Z, function: @escaping (Object, A, B, C) -> Z) -> (A, B, C) -> Z {
     return { [weak object] a, b, c in
         guard let obj = object else { return defaultValue }
         return function(obj, a, b, c)
@@ -141,7 +141,7 @@ public func ward<Object: AnyObject, A, B, C>(_ object: Object, _ keyPath: KeyPat
 /**
  Wards a `function` located at a `keyPath` based on the lifetime of an `object`, returing a `defaultValue` if `object` has deallocated. `object` will not be retained, and `function` will only be called if `object` is non-nil at call-time.
  */
-public func ward<Object: AnyObject, Z>(_ object: Object, withDefault defaultValue: Z, _ keyPath: KeyPath<Object, () -> Z>) -> () -> Z {
+public func ward<Object: AnyObject, Z>(_ object: Object, else defaultValue: Z, _ keyPath: KeyPath<Object, () -> Z>) -> () -> Z {
     return { [weak object] in
         guard let obj = object else { return defaultValue }
         return obj[keyPath: keyPath]()
@@ -151,7 +151,7 @@ public func ward<Object: AnyObject, Z>(_ object: Object, withDefault defaultValu
 /**
  Wards a `function` located at a `keyPath` based on the lifetime of an `object`, returing a `defaultValue` if `object` has deallocated. `object` will not be retained, and `function` will only be called if `object` is non-nil at call-time.
  */
-public func ward<Object: AnyObject, A, Z>(_ object: Object, withDefault defaultValue: Z, _ keyPath: KeyPath<Object, (A) -> Z>) -> (A) -> Z {
+public func ward<Object: AnyObject, A, Z>(_ object: Object, else defaultValue: Z, _ keyPath: KeyPath<Object, (A) -> Z>) -> (A) -> Z {
     return { [weak object] a in
         guard let obj = object else { return defaultValue }
         return obj[keyPath: keyPath](a)
@@ -161,7 +161,7 @@ public func ward<Object: AnyObject, A, Z>(_ object: Object, withDefault defaultV
 /**
  Wards a `function` located at a `keyPath` based on the lifetime of an `object`, returing a `defaultValue` if `object` has deallocated. `object` will not be retained, and `function` will only be called if `object` is non-nil at call-time.
  */
-public func ward<Object: AnyObject, A, B, Z>(_ object: Object, withDefault defaultValue: Z, _ keyPath: KeyPath<Object, (A, B) -> Z>) -> (A, B) -> Z {
+public func ward<Object: AnyObject, A, B, Z>(_ object: Object, else defaultValue: Z, _ keyPath: KeyPath<Object, (A, B) -> Z>) -> (A, B) -> Z {
     return { [weak object] a, b in
         guard let obj = object else { return defaultValue }
         return obj[keyPath: keyPath](a, b)
@@ -171,7 +171,7 @@ public func ward<Object: AnyObject, A, B, Z>(_ object: Object, withDefault defau
 /**
  Wards a `function` located at a `keyPath` based on the lifetime of an `object`, returing a `defaultValue` if `object` has deallocated. `object` will not be retained, and `function` will only be called if `object` is non-nil at call-time.
  */
-public func ward<Object: AnyObject, A, B, C, Z>(_ object: Object, withDefault defaultValue: Z, _ keyPath: KeyPath<Object, (A, B, C) -> Z>) -> (A, B, C) -> Z {
+public func ward<Object: AnyObject, A, B, C, Z>(_ object: Object, else defaultValue: Z, _ keyPath: KeyPath<Object, (A, B, C) -> Z>) -> (A, B, C) -> Z {
     return { [weak object] a, b, c in
         guard let obj = object else { return defaultValue }
         return obj[keyPath: keyPath](a, b, c)
