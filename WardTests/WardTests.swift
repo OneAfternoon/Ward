@@ -97,7 +97,7 @@ class WardTests: XCTestCase {
             return string.count
         })
         
-        let function: (String) -> Int = ward(sample.unsafelyUnwrapped, else: -1, \.stringToInt)
+        let function: (String) -> Int = ward(sample.unsafelyUnwrapped, \.stringToInt, else: -1)
         
         XCTAssert(function("Test") == 4)
         XCTAssert(function("TestTwo") == 7)
@@ -138,7 +138,7 @@ class WardTests: XCTestCase {
             return true
         })
         
-        let function: () -> Bool = ward(sample.unsafelyUnwrapped, else: false, \.voidToBool)
+        let function: () -> Bool = ward(sample.unsafelyUnwrapped, \.voidToBool, else: false)
         
         XCTAssert(function() == true)
         
