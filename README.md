@@ -40,6 +40,7 @@ class MyViewController: UIViewController {
         super.viewDidLoad()
         
         useAClosureBasedAPI(block: ward(self, MyViewController.handleSomething))
+        // MyViewController.handleSomething is of type (MyViewController) -> (Something) -> Void
     }
     
     func handleSomething(_ something: Something) {
