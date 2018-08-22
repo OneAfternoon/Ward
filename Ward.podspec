@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'Ward'
-  spec.version      = '1.0.1'
+  spec.version      = '1.0.2'
   spec.summary      = 'A Swift micro-framework to clean up memory management syntax.'
 
   spec.license      = { :type => "MIT", :file => "LICENSE" }
