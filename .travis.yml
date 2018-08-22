@@ -4,8 +4,9 @@ script: fastlane scan
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 deploy:
-  provider: releases
-  api_key:
-    secure: Nw/mgRZPP65z0LYlgMiwGw05RTmFxYK2orPGF71qV370qpo0S8V4shqTkoILbgShIhgUR8eT4MWwXOv7ToU6gwAURgyMseW0NPGzOhT2g3JzyRaK6F4jqnltUsosvae58fV3tl1D4r9h172QJ/pWFpxbb3epqUJeozJ2YCo6+PS1AkEGVAhJE7lBhHP19bGPQ83bNEAr5vbmrcgKdp+oV83AatH6mPzOt5AJXQu2mp27LvQADHpRGuOxCX9+DvQwvIYHqIrXO+8bXj21QVAj0TgbxQ+LUzPsITL0W+z1wrEJEiLjMRJz7rJOqPsEcThEWJtfnk5WLo+VWtdxMFhZsZzD3AHjafdeyXDAF9CkwQY5Q1RSqHHn77CJl6ivfu7Vh4AtHcFvtz+Cb1UPkA6nmXHjQjKgwBl1BK7jWBkq2/VM5DqHxMqOcdti21VKYrK2nbPiCEB3AGUqDUm/GqOKHPviLeL5ir0XyWYfKTpK4tr8NZ/eVqRIUHIjyWkwhCPJxl6xeZq9eIIYhRVRa+zzT/gEeWSkUfY4NrZy8pYseuvPsBYyTakTBXF3ZMsL0I1ZJbtYKgRao/8Q1/lm8iITWxbGRL8XOXViQxqlFXVnlGDEuW7p1l3BqE0C+s7PBvq9+C3tkmwhKr89YxWH1WSwp40QKHwylHlsNAMXihJZtmI=
-  on:
-    repo: OneAfternoon/Ward
+    - provider: script
+        script: pod trunk push TinyKeychain.podspec
+            on:
+                repo: smolster/TinyKeychain
+                branch: master
+                tags: true
