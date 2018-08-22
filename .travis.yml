@@ -2,18 +2,10 @@ osx_image: xcode9.4
 language: swift
 script: fastlane scan
 after_success:
-    - bash <(curl -s https://codecov.io/bash)
+- bash <(curl -s https://codecov.io/bash)
 deploy:
-    - provider: releases
-      api_key:
-          secure: URQ5avF42Ci0hQJE6yS/mFwQAmqUciId7eCPHKdt/YECDLSu5HIzggX5SdWdcaD+hOouXVtSxv5DJnJZeee5tiU2tTwdFOX+Z2vt54x7Idy6DqE3Uw1b1F2OoG8viqyVgqiVYgh3XRSOBzznDHv7ATqRzwMQuJhTIQ4WJSxFLkAvRiEuHbI7tv4/nZnfQ2FLleDmDicf248SG8rFCKtin6u6IngNKYmDpaiI94HD/3YBuPKq6CwlDWKtgOYR+KV4kue6OYiDIAFGdey9oQvO3hvHNAVZGWo3fRSRL/7c51NNx4PjW5A1NB6hSqgSeNS2RLsupmLhWZSgyhrDz0O1OT4yVseOFYiqAkqcEsMJIytpQFVpsp3S8WHbhrQxCoAXWdVFKhKZDXdBBdXWdwyLwfJU7j89KUCYUKsshXzAGkSevRBHjHUVXpqKJg9BNe2tQAYL6uvEaoy9sBxFsxzvRqVFZw5ZEDKD+w2toqg/09lAAiV4LCRm9FW06aitSOEhiYMdrCP8GEhB1PltR5n1jljLx+yYfyqrWab4oVRebszQ+gIDN4O8Ewd65hrSucvvdAyUsEjwsglQOJSsuiHx1inSYd+3CiFwxoEMMQdA4FGSBC2VJKb5H602Wcuss7nJquAg4WforN9w2dyS25qsY7elLgSgaWLJvfUS9QVDaqo=
-      on:
-          repo: OneAfternoon/Ward
-          branch: master
-          tags: true
-    - provider: script
-      script: pod trunk push Ward.podspec
-      on:
-          repo: OneAfternoon/Ward
-          branch: master
-          tags: true
+  provider: releases
+  api_key:
+    secure: Nw/mgRZPP65z0LYlgMiwGw05RTmFxYK2orPGF71qV370qpo0S8V4shqTkoILbgShIhgUR8eT4MWwXOv7ToU6gwAURgyMseW0NPGzOhT2g3JzyRaK6F4jqnltUsosvae58fV3tl1D4r9h172QJ/pWFpxbb3epqUJeozJ2YCo6+PS1AkEGVAhJE7lBhHP19bGPQ83bNEAr5vbmrcgKdp+oV83AatH6mPzOt5AJXQu2mp27LvQADHpRGuOxCX9+DvQwvIYHqIrXO+8bXj21QVAj0TgbxQ+LUzPsITL0W+z1wrEJEiLjMRJz7rJOqPsEcThEWJtfnk5WLo+VWtdxMFhZsZzD3AHjafdeyXDAF9CkwQY5Q1RSqHHn77CJl6ivfu7Vh4AtHcFvtz+Cb1UPkA6nmXHjQjKgwBl1BK7jWBkq2/VM5DqHxMqOcdti21VKYrK2nbPiCEB3AGUqDUm/GqOKHPviLeL5ir0XyWYfKTpK4tr8NZ/eVqRIUHIjyWkwhCPJxl6xeZq9eIIYhRVRa+zzT/gEeWSkUfY4NrZy8pYseuvPsBYyTakTBXF3ZMsL0I1ZJbtYKgRao/8Q1/lm8iITWxbGRL8XOXViQxqlFXVnlGDEuW7p1l3BqE0C+s7PBvq9+C3tkmwhKr89YxWH1WSwp40QKHwylHlsNAMXihJZtmI=
+  on:
+    repo: OneAfternoon/Ward
