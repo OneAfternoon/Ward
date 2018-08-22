@@ -3,3 +3,17 @@ language: swift
 script: fastlane scan
 after_success:
     - bash <(curl -s https://codecov.io/bash)
+deploy:
+    - provider: releases
+      api_key:
+          secure: URQ5avF42Ci0hQJE6yS/mFwQAmqUciId7eCPHKdt/YECDLSu5HIzggX5SdWdcaD+hOouXVtSxv5DJnJZeee5tiU2tTwdFOX+Z2vt54x7Idy6DqE3Uw1b1F2OoG8viqyVgqiVYgh3XRSOBzznDHv7ATqRzwMQuJhTIQ4WJSxFLkAvRiEuHbI7tv4/nZnfQ2FLleDmDicf248SG8rFCKtin6u6IngNKYmDpaiI94HD/3YBuPKq6CwlDWKtgOYR+KV4kue6OYiDIAFGdey9oQvO3hvHNAVZGWo3fRSRL/7c51NNx4PjW5A1NB6hSqgSeNS2RLsupmLhWZSgyhrDz0O1OT4yVseOFYiqAkqcEsMJIytpQFVpsp3S8WHbhrQxCoAXWdVFKhKZDXdBBdXWdwyLwfJU7j89KUCYUKsshXzAGkSevRBHjHUVXpqKJg9BNe2tQAYL6uvEaoy9sBxFsxzvRqVFZw5ZEDKD+w2toqg/09lAAiV4LCRm9FW06aitSOEhiYMdrCP8GEhB1PltR5n1jljLx+yYfyqrWab4oVRebszQ+gIDN4O8Ewd65hrSucvvdAyUsEjwsglQOJSsuiHx1inSYd+3CiFwxoEMMQdA4FGSBC2VJKb5H602Wcuss7nJquAg4WforN9w2dyS25qsY7elLgSgaWLJvfUS9QVDaqo=
+      on:
+          repo: OneAfternoon/Ward
+          branch: master
+          tags: true
+    - provider: script
+      script: pod trunk push Ward.podspec
+      on:
+          repo: OneAfternoon/Ward
+          branch: master
+          tags: true
