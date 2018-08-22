@@ -8,42 +8,38 @@
 
 class SampleClass { }
 
-class SampleKeyPathClass {
+class SampleFunctionClass<Output> {
     
-    private var voidToVoidAction: (() -> Void)?
-    private var stringToVoidAction: ((String) -> Void)?
-    private var voidToBoolAction: (() -> Bool)?
-    private var stringToIntAction: ((String) -> Int)?
+    private let noInputHandler: (() -> Output)?
+    private let oneInputHandler: ((Int) -> Output)?
+    private let twoInputHandler: ((Int, Int) -> Output)?
+    private let threeInputHandler: ((Int, Int, Int) -> Output)?
     
-    init(voidToVoid: @escaping () -> Void) {
-        self.voidToVoidAction = voidToVoid
+    init(
+        noInputHandler: (() -> Output)? = nil,
+        oneInputHandler: ((Int) -> Output)? = nil,
+        twoInputHandler: ((Int, Int) -> Output)? = nil,
+        threeInputHandler: ((Int, Int, Int) -> Output)? = nil
+    ) {
+        self.noInputHandler = noInputHandler
+        self.oneInputHandler = oneInputHandler
+        self.twoInputHandler = twoInputHandler
+        self.threeInputHandler = threeInputHandler
     }
     
-    init(stringToVoid: @escaping (String) -> Void) {
-        self.stringToVoidAction = stringToVoid
+    func handleNoInput() -> Output {
+        return noInputHandler!()
     }
     
-    init(voidToBool: @escaping () -> Bool) {
-        self.voidToBoolAction = voidToBool
+    func handleOneInput(_ a: Int) -> Output {
+        return oneInputHandler!(a)
     }
     
-    init(stringToInt: @escaping (String) -> Int) {
-        self.stringToIntAction = stringToInt
+    func handleTwoInputs(_ a: Int, _ b: Int) -> Output {
+        return twoInputHandler!(a, b)
     }
     
-    var voidToVoid: () -> Void {
-        return voidToVoidAction!
-    }
-    
-    var stringToVoid: (String) -> Void {
-        return stringToVoidAction!
-    }
-    
-    var voidToBool: () -> Bool {
-        return voidToBoolAction!
-    }
-    
-    var stringToInt: (String) -> Int {
-        return stringToIntAction!
+    func handleThreeInputs(_ a: Int, _ b: Int, _ c: Int) -> Output {
+        return threeInputHandler!(a, b, c)
     }
 }

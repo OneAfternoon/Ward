@@ -31,7 +31,7 @@ present(vc, shouldExit: ward(self, else: true) { strongSelf
 })
 ```
 
-Use the `KeyPath` based API to call blocks that are properties of ```self```
+Use the curried function API to call Swift's automatically synthesized static accessors for instance methods:
 
 ```swift
 class MyViewController: UIViewController {
@@ -39,18 +39,12 @@ class MyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        useAClosureBasedAPI(block: ward(self, \.handleSomething))
-        useAClosureBasedAPI(block: ward(self, \.handleAnotherThing))
+        useAClosureBasedAPI(block: ward(self, MyViewController.handleSomething))
+        // MyViewController.handleSomething is of type (MyViewController) -> (Something) -> Void
     }
     
-    // Can't access functions with KeyPath so blocks are required
-    let handleSomething: (_ something: Any) -> Void = { something in 
+    func handleSomething(_ something: Something) {
         ...
-    }
-    
-    // lazy because accessing self
-    lazy var handleSomething: (_ something: Any) -> Void = { something in 
-         self.doThing(with: something)
     }
 }
 ```
