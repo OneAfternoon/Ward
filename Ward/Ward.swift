@@ -175,10 +175,24 @@ public func ward<First: AnyObject, Second: AnyObject, Third: AnyObject, A, B, Z>
 
 // MARK: + (A, B, C) -> Z
 
-public func ward<Object: AnyObject, A, B, C, Z>(_ object: Object, else defaultValue: Z, function: @escaping (Object, A, B, C) -> Z) -> (A, B, C) -> Z {
-    return { [weak object] a, b, c in
-        guard let obj = object else { return defaultValue }
-        return function(obj, a, b, c)
+public func ward<First: AnyObject, A, B, C, Z>(_ first: First, else defaultValue: Z, function: @escaping (First, A, B, C) -> Z) -> (A, B, C) -> Z {
+    return { [weak first] a, b, c in
+        guard let first = first else { return defaultValue }
+        return function(first, a, b, c)
+    }
+}
+
+public func ward<First: AnyObject, Second: AnyObject, A, B, C, Z>(_ first: First, _ second: Second, else defaultValue: Z, function: @escaping (First, Second, A, B, C) -> Z) -> (A, B, C) -> Z {
+    return { [weak first, weak second] a, b, c in
+        guard let first = first, let second = second else { return defaultValue }
+        return function(first, second, a, b, c)
+    }
+}
+
+public func ward<First: AnyObject, Second: AnyObject, Third: AnyObject, A, B, C, Z>(_ first: First, _ second: Second, _ third: Third, else defaultValue: Z, function: @escaping (First, Second, Third, A, B, C) -> Z) -> (A, B, C) -> Z {
+    return { [weak first, weak second, weak third] a, b, c in
+        guard let first = first, let second = second, let third = third else { return defaultValue }
+        return function(first, second, third, a, b, c)
     }
 }
 
