@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
   spec.homepage     = 'https://github.com/OneAfternoon/Ward'
   spec.authors      = { 'Swain Molster' => 'swain.molster@gmail.com' }
 
-  spec.platform     = :ios
+  spec.platform     = :ios, "9.0"
   spec.swift_version = "4.1"
 
   spec.source          = { :git => "https://github.com/OneAfternoon/Ward.git", :tag => "v#{spec.version}" }
