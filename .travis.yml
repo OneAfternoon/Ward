@@ -5,8 +5,8 @@ after_success:
 - bash <(curl -s https://codecov.io/bash)
 deploy:
     - provider: script
-        script: pod trunk push TinyKeychain.podspec
+        script: pod trunk push Ward.podspec
             on:
-                repo: smolster/TinyKeychain
+                repo: OneAfternoon/Ward
                 branch: master
                 tags: true
