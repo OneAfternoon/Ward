@@ -24,12 +24,8 @@ useAClosureBasedAPI(block: ward(self) { strongSelf, something in
     strongSelf.handle(something)
 })
 ```
-For callbacks that return, provide a default value if the object can't be unwrapped. 
-```swift
-present(vc, shouldExit: ward(self, else: true) { strongSelf
-    return strongSelf.shouldExit
-})
-```
+
+### Supports Swift's unapplied method references 
 
 Use the curried function API to call Swift's automatically synthesized static accessors for instance methods:
 
@@ -49,11 +45,12 @@ class MyViewController: UIViewController {
 }
 ```
 
-Plays well with generic inputs & outputs, too!
+### Supports non-`Void` returning closures
 
 ```swift
-lazy var function: (String) -> Int = ward(self) { strongSelf, string in
-    return strongSelf.stringToInt(string)
+/// Returns true when `self` has not deallocated and `count` is even.
+let selfIsAliveAndCountIsEven: (_ count: Int) -> Bool = ward(self, else: false) { strongSelf, count in
+    return count % 2 == 0
 }
 ```
 
