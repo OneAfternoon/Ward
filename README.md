@@ -61,9 +61,9 @@ class MyViewController: UIViewController {
 **Supports non-`Void` returning closures**
 
 ```swift
-/// Returns true when `self` has not deallocated and `count` is even.
-let selfIsAliveAndCountIsEven: (_ count: Int) -> Bool = ward(self, else: false) { strongSelf, count in
-    return count % 2 == 0
+/// Returns half of `count` while `self` is alive. If `self` has deallocated, returns -1.
+let halfOfCountIfSelfAlive: (_ count: Int) -> Int = ward(self, else: -1) { _, count in
+    return count / 2
 }
 ```
 
