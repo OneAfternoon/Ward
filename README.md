@@ -25,7 +25,20 @@ useAClosureBasedAPI(block: ward(self) { strongSelf, something in
 })
 ```
 
-### Supports Swift's unapplied method references 
+### Under the hood
+
+```swift
+public func ward<Object: AnyObject>(_ object: Object, f: @escaping (Object) -> Void) -> () -> Void {
+    return { [weak object] in
+        guard let object = object else { return }
+        f(object)
+    }
+}
+```
+
+### Other use cases
+
+**Supports Swift's [unapplied method references](https://oleb.net/blog/2014/07/swift-instance-methods-curried-functions/)**
 
 Use the curried function API to call Swift's automatically synthesized static accessors for instance methods:
 
@@ -45,12 +58,21 @@ class MyViewController: UIViewController {
 }
 ```
 
-### Supports non-`Void` returning closures
+**Supports non-`Void` returning closures**
 
 ```swift
 /// Returns true when `self` has not deallocated and `count` is even.
 let selfIsAliveAndCountIsEven: (_ count: Int) -> Bool = ward(self, else: false) { strongSelf, count in
     return count % 2 == 0
+}
+```
+
+**Supports `ward` for multiple objects**
+
+```swift
+let anObject = MyClass()
+ward(self, anObject) { strongSelf, theObject in 
+   ...
 }
 ```
 
