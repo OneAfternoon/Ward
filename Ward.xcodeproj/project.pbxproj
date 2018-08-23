@@ -10,9 +10,10 @@
 		A018AC262127094E00259F42 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A018AC252127094E00259F42 /* README.md */; };
 		A01CCA9E212D3EB00022ADD3 /* Ward.podspec in Resources */ = {isa = PBXBuildFile; fileRef = A01CCA9D212D3EB00022ADD3 /* Ward.podspec */; };
 		A0BC75FB212672D500A47FD7 /* Ward.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BC75F1212672D500A47FD7 /* Ward.framework */; };
-		A0BC7600212672D500A47FD7 /* WardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BC75FF212672D500A47FD7 /* WardTests.swift */; };
+		A0BC7600212672D500A47FD7 /* FlatFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BC75FF212672D500A47FD7 /* FlatFunctionTests.swift */; };
 		A0BC760C212672E800A47FD7 /* Ward.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BC760B212672E800A47FD7 /* Ward.swift */; };
 		A0BC760E2126731C00A47FD7 /* SampleClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BC760D2126731C00A47FD7 /* SampleClasses.swift */; };
+		A0CDED3F212DEEB800779017 /* CurriedFunctionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CDED3E212DEEB800779017 /* CurriedFunctionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,10 +32,11 @@
 		A0BC75F1212672D500A47FD7 /* Ward.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Ward.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0BC75F5212672D500A47FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0BC75FA212672D500A47FD7 /* WardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0BC75FF212672D500A47FD7 /* WardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardTests.swift; sourceTree = "<group>"; };
+		A0BC75FF212672D500A47FD7 /* FlatFunctionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatFunctionTests.swift; sourceTree = "<group>"; };
 		A0BC7601212672D500A47FD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0BC760B212672E800A47FD7 /* Ward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ward.swift; sourceTree = "<group>"; };
 		A0BC760D2126731C00A47FD7 /* SampleClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleClasses.swift; sourceTree = "<group>"; };
+		A0CDED3E212DEEB800779017 /* CurriedFunctionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurriedFunctionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +90,8 @@
 		A0BC75FE212672D500A47FD7 /* WardTests */ = {
 			isa = PBXGroup;
 			children = (
-				A0BC75FF212672D500A47FD7 /* WardTests.swift */,
+				A0BC75FF212672D500A47FD7 /* FlatFunctionTests.swift */,
+				A0CDED3E212DEEB800779017 /* CurriedFunctionTests.swift */,
 				A0BC760D2126731C00A47FD7 /* SampleClasses.swift */,
 				A0BC7601212672D500A47FD7 /* Info.plist */,
 			);
@@ -213,8 +216,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0CDED3F212DEEB800779017 /* CurriedFunctionTests.swift in Sources */,
 				A0BC760E2126731C00A47FD7 /* SampleClasses.swift in Sources */,
-				A0BC7600212672D500A47FD7 /* WardTests.swift in Sources */,
+				A0BC7600212672D500A47FD7 /* FlatFunctionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
