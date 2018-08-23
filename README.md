@@ -61,8 +61,8 @@ class MyViewController: UIViewController {
 **Supports non-`Void` returning closures**
 
 ```swift
-/// Returns half of `count` while `self` is alive. If `self` has deallocated, returns -1.
-let halfOfCountIfSelfAlive: (_ count: Int) -> Int = ward(self, else: -1) { _, count in
+/// Returns half of `count` while `self` is alive. If `self` has deallocated, returns the provided default value (nil).
+let halfOfCountIfSelfAlive: (_ count: Int) -> Int? = ward(self, else: nil) { _, count in
     return count / 2
 }
 ```
