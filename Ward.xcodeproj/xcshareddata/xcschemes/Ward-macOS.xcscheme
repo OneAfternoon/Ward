@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0940"
+   LastUpgradeVersion = "0900"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A0BC75F0212672D500A47FD7"
+               BlueprintIdentifier = "52D6DA0E1BF000BD002C0205"
                BuildableName = "Ward.framework"
-               BlueprintName = "Ward"
+               BlueprintName = "Ward-macOS"
                ReferencedContainer = "container:Ward.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,16 +26,17 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      codeCoverageEnabled = "YES"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      language = ""
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A0BC75F9212672D500A47FD7"
-               BuildableName = "WardTests.xctest"
-               BlueprintName = "WardTests"
+               BlueprintIdentifier = "DD7502791C68FCFC006590AF"
+               BuildableName = "Ward-macOS Tests.xctest"
+               BlueprintName = "Ward-macOS Tests"
                ReferencedContainer = "container:Ward.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -43,9 +44,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A0BC75F0212672D500A47FD7"
+            BlueprintIdentifier = "52D6DA0E1BF000BD002C0205"
             BuildableName = "Ward.framework"
-            BlueprintName = "Ward"
+            BlueprintName = "Ward-macOS"
             ReferencedContainer = "container:Ward.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,6 +57,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -65,9 +67,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A0BC75F0212672D500A47FD7"
+            BlueprintIdentifier = "52D6DA0E1BF000BD002C0205"
             BuildableName = "Ward.framework"
-            BlueprintName = "Ward"
+            BlueprintName = "Ward-macOS"
             ReferencedContainer = "container:Ward.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -83,9 +85,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A0BC75F0212672D500A47FD7"
+            BlueprintIdentifier = "52D6DA0E1BF000BD002C0205"
             BuildableName = "Ward.framework"
-            BlueprintName = "Ward"
+            BlueprintName = "Ward-macOS"
             ReferencedContainer = "container:Ward.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
