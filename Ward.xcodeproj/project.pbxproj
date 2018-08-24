@@ -61,6 +61,7 @@
 		A010D5262130885400B5D47C /* CurriedFunctionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurriedFunctionTests.swift; sourceTree = "<group>"; };
 		A010D5302130892D00B5D47C /* Ward.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Ward.podspec; sourceTree = "<group>"; };
 		A071323921308B45004963B3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A071323A21308D05004963B3 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		AD2FAA261CD0B6D800659CF4 /* Ward.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Ward.plist; sourceTree = "<group>"; };
 		AD2FAA281CD0B6E100659CF4 /* WardTests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = WardTests.plist; sourceTree = "<group>"; };
 		DD75027A1C68FCFC006590AF /* Ward-macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ward-macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +129,7 @@
 			children = (
 				A010D5302130892D00B5D47C /* Ward.podspec */,
 				A071323921308B45004963B3 /* README.md */,
+				A071323A21308D05004963B3 /* Package.swift */,
 				8933C7811EB5B7E0000D00A4 /* Sources */,
 				8933C7831EB5B7EB000D00A4 /* Tests */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
