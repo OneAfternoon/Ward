@@ -1,9 +1,9 @@
 //
 //  Ward.swift
-//  Ward
+//  OneAfternoon
 //
-//  Created by Mack Hasz and Swain Molster on 8/16/18.
-//  Copyright © 2018 Mack Hasz and Swain Molster. All rights reserved.
+//  Created by Swain Molster and Mack Hasz on 8/24/18.
+//  Copyright © 2018 OneAfternoon. All rights reserved.
 //
 
 // MARK: - Flat Function Variants

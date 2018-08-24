@@ -1,15 +1,14 @@
-Pod::Spec.new do |spec|
-  spec.name         = 'Ward'
-  spec.version      = '1.0.3'
-  spec.summary      = 'A Swift micro-framework to clean up memory management syntax.'
-
-  spec.license      = { :type => "MIT", :file => "LICENSE" }
-  spec.homepage     = 'https://github.com/OneAfternoon/Ward'
-  spec.authors      = { 'Swain Molster' => 'swain.molster@gmail.com' }
-
-  spec.platform     = :ios, "9.0"
-  spec.swift_version = "4.1"
-
-  spec.source          = { :git => "https://github.com/OneAfternoon/Ward.git", :tag => "v#{spec.version}" }
-  spec.source_files    = "Ward/"
+Pod::Spec.new do |s|
+  s.name         = "Ward"
+  s.version      = "1.0.3"
+  s.summary      = "A Swift micro-framework to clean up memory management syntax."
+  s.homepage     = "https://github.com/OneAfternoon/Ward"
+  s.license      = { :type => "MIT", :file => "LICENSE" }
+  s.authors      = { "Swain Molster" => "swain.molster@gmail.com" }
+  s.ios.deployment_target = "8.0"
+  s.osx.deployment_target = "10.9"
+  s.watchos.deployment_target = "2.0"
+  s.tvos.deployment_target = "9.0"
+  s.source        = { :git => "https://github.com/OneAfternoon/Ward.git", :tag => s.version.to_s }
+  s.source_files  = "Sources/**/*"
 end

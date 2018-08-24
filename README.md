@@ -12,7 +12,7 @@ useAClosureBasedAPI(block: { [weak self] something in
     guard let strongSelf = self else {
         return
     }
-    
+
     strongSelf.handle(something)
 })
 ```
@@ -47,11 +47,11 @@ class MyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         useAClosureBasedAPI(block: ward(self, MyViewController.handleSomething))
         // MyViewController.handleSomething is of type (MyViewController) -> (Something) -> Void
     }
-    
+
     func handleSomething(_ something: Something) {
         ...
     }
@@ -71,7 +71,7 @@ let halfOfCountIfSelfAlive: (_ count: Int) -> Int? = ward(self, else: nil) { _, 
 
 ```swift
 let anObject = MyClass()
-ward(self, anObject) { strongSelf, theObject in 
+ward(self, anObject) { strongSelf, theObject in
    ...
 }
 ```
